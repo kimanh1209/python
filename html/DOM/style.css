@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(217, 88, 70);
+    font-family: Roboto, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    color: #4d4d4d;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 0 15px #737373;
+}
+.contentHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(217, 88, 70);
+    border-bottom: 1px solid rgb(212, 212, 212);
+    padding: 2em 0;
+    width: 100%;
+}
+.contentBody{
+    flex:1;
+    background-color: rgb(245, 245, 245);
+    font-size: 14px;
+    padding: 2em;
+}
+.paragraph p{
+    padding: 10px 0;
+}
+
+button{
+    background-color: rgb(217, 88, 70);
+    color:white;
+    border: 1px;
+}
+.myButton {
+	background-color:rgb(217, 88, 70);
+	border-radius:5px;
+	color:#ffffff;
+	font-size:14px;
+	padding:5px 5px;
+	text-decoration:none;
+    margin-right: 5px;
+}

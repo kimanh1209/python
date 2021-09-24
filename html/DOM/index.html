@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="content">
+            <div class="contentHeader" id="header">
+                <h1>Kim Anh's Blog</h1>
+            </div>
+            <div class="contentBody">
+                <div class="paragraph">
+                    <p id="p1" class="para">
+                        Cơn bão thứ sáu trên biển Đông suy yếu khi áp sát đất liền Thừa Thiên Huế - Quảng Ngãi, bước đầu ghi nhận hai ngư dân mất tích.
+                    </p>
+                    <p id="p2" class="para">
+                        Sáng 24/9, Trung tâm Dự báo Khí tượng Thủy văn quốc gia cho biết bão Dianmu hiện chỉ còn là vùng áp thấp ở biên giới Việt Nam - Lào, sức gió mạnh nhất dưới 40 km/h, dưới cấp 6. Hôm nay vùng áp thấp chủ yếu theo hướng tây tây bắc với tốc độ 15-20 km/h.
+                    </p>
+                    <p id="p3" class="para">
+                        Hoàn lưu vùng áp thấp kết hợp với đới gió Đông nên sáng 24/9 ngoài khơi từ Quảng Trị đến Quảng Ngãi còn gió giật cấp 6-7. Vịnh Bắc Bộ có gió mạnh cấp 5, sóng biển cao 2-3 m.
+                    </p>
+                </div>
+                <div class="buttonGroup">
+                    <a href="#" class="myButton" onclick="doimau()">Đổi màu</a>
+                    <a href="#" class="myButton" onclick="doiMauNen()">Đổi màu nền</a>
+                    <a href="#" class="myButton" onclick="doiNoiDung(0,1,'id2')">Đổi nội dung</a>
+                    <a href="#" class="myButton" onclick="doiKichThuocTatCa(13)">Đổi kich thuoc tat ca</a>
+                    <a href="#" class="myButton" onclick="tangKichThuoc(0)">Tang kich thuoc</a>
+                    <a href="#" class="myButton" onclick="giamKichThuoc(0)">Giam kich thuoc</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<!-- Tạo 1 trang HTML với nội dung là 3 đoạn văn. Hãy viết các function có tác dụng như sau:
+
+changeColor(): Đổi màu chữ của 3 đoạn văn theo thứ tự xanh, vàng, đỏ.
+changeBgColor(color): Thay đổi màu nền của trang thành màu color.
+copyContent(paragraph1, paragraph2): Thay đổi nội dung của đoạn văn paragraph1 thành giống nội dung của đoạn văn paragraph2 (tham số truyền vào là id của 2 đoạn văn hoặc thứ tự của đoạn văn).
+changeFontSize(x): Thay đổi kích thước font chữ của cả 3 đoạn văn thành x pixels (x là một số nguyên).
+increaseFontSize(paragraph): Tăng kích thước font chữ của đoạn văn mong muốn (tham số truyền vào là id đoạn văn hoặc thứ tự đoạn văn) lên 1 pixel so với kích thước hiện tại, kích thước tăng lên không được vượt quá 30 pixels (Sử dụng sau khi gọi hàm changeFontSize() hoặc dùng window.getComputedStyle).
+decreaseFontSize(paragraph): Giảm kích thước font chữ của đoạn văn mong muốn (tham số truyền vào là id đoạn văn hoặc thứ tự đoạn văn) xuống 1 pixels so với kích thước hiện tại, kích thước giảm xuống không vượt quá 10 pixels.
+Nâng cao: Tạo ra các nút ở cuối trang và gán sự kiện onclick để khi bấm nút thì gọi hàm tương ứng. -->
