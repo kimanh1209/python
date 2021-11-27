@@ -1,0 +1,15 @@
+Các thư viện sử dụng trong project
+1.https://flask.palletsprojects.com/en/2.0.x/
+    - $ pip install Flask
+2.https://pypi.org/project/PyMySQL/
+    - $ pip install PyMySQL
+3.https://python-docx.readthedocs.io/en/latest/
+    - $ pip install python-docx
+
+
+
+1. Cài mysql và run script trong file databaseInit.sql
+2. chỉnh cấu hình để kết nối vào database trong fiel app.py dòng 13 sao cho đúng với cấu hình mysql trong máy chạy;
+3. run file app.py và mở http://localhost:5000/
+
+

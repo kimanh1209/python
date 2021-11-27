@@ -1,0 +1,60 @@
+{% set title = 'PeTeBoc' %}
+<!DOCTYPE html>
+<html class="h-100">
+
+<head>
+    {% block head %}
+    <!-- <title>PeTeBuc</title> -->
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='/assets/dist/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}" />
+    <title>{{title}}</title>
+    {% endblock %}
+</head>
+
+<body class="h-100">
+    <div class="cover-container d-flex h-100 mx-auto flex-column">
+        <header id="navBar">
+            <nav class="navbar navbar-expand-lg navbar-light shadow-sm rounded">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">{{title}}</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link {% if 'home' == curPage %} active {% endif %}" aria-current="page" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if 'about' == curPage %} active {% endif %}" href="about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if 'help' == curPage %} active {% endif %}" href="help">Help</a>
+                            </li>
+                        </ul>
+                        {% if g.user %}
+                        <form class="d-flex" action="logout">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{g.user.username}}</a>
+                            <button class="btn btn-outline-success" type="submit">Logout</button>
+                        </form>
+                        {% else %}
+                        <form class="d-flex" action="login">
+                            <button class="btn btn-outline-success" type="submit">Login</button>
+                        </form>
+                        {% endif %}
+                        
+                        
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main id="content" class="h-100">{% block content %}{% endblock %}</main>
+    </div>
+</body>
+
+
+
+</html>

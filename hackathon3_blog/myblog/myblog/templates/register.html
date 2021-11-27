@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% set curPage = "login" %}
+{% block content %}
+<div class="">
+  <form class="form-signin" action="register" method="post">
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <div>
+      {% for message in messages %}
+      <p class="flashText">{{ message }}</p>
+      {% endfor %}
+    </div>
+    {% endif %} {% endwith %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Username</label>
+      <input class="form-control" id="username" name="username">
+
+    </div>
+    <div class="mb-3">
+      <label for="newPass" class="form-label">Password</label>
+      <input type="password" class="form-control" id="newPass" name="newPass">
+    </div>
+    <div class="mb-3">
+      <label for="reNewPass" class="form-label">Re-enter Password</label>
+      <input type="password" class="form-control" id="reNewPass" name="reNewPass">
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+</div>
+{% endblock%}

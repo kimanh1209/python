@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% set curPage = "help" %}
+{% block content %}
+
+<div class="container h-100">
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col-6">
+            {% if g.user %}
+            <div class="my-2 mt-4">
+                {% with messages = get_flashed_messages() %} {% if messages %}
+                <div>
+                    {% for message in messages %}
+                    <p class="flashText">{{ message }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %} {% endwith %}
+                <form action="help" method="post" class="d-flex flex-column ">
+                    <input class="form-control" type="text" name="title" placeholder="Title"
+                        aria-label="default input example">
+                    <input class="form-control" type="hidden" name="username" value="{{g.user['username']}}">
+                    <textarea class="form-control mt-2" id="postContent" rows="3" name="content"
+                        placeholder="Super happy to hear that {{ g.user['username'] }}! Let me know if you have any question!"></textarea>
+                    <button class="my-2 btn btn-primary btn-sm ">Send ticket</button>
+                </form>
+            </div>
+            {% endif %}
+
+            {% if file_created  %}
+            <p>
+                File created! Click on the link to download the file and send it to your
+                boss right away :)
+                <a href="{{ url_for('static', filename='files/'+filename) }}"
+                    download="{{ url_for('static', filename='files/'+filename) }}">Download</a>
+            </p>
+            {% endif %}
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+{% endblock%}

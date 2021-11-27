@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% set curPage = "home" %}
+{% block content %}
+
+<div class="container h-100">
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col-6">
+            {% if g.user and post['author'] == g.user.id %}
+            <div class="my-2 mt-4">
+                {% with messages = get_flashed_messages() %} {% if messages %}
+                <div>
+                    {% for message in messages %}
+                    <p class="flashText">{{ message }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %} {% endwith %}
+                <form action="/post?post_id={{post['id']}}" method="post" class="d-flex flex-column ">
+                    <textarea class="form-control" id="postContent" rows="3" name="content">{{ post['content'] }}</textarea>
+                    <div class="">
+                        <button class="my-2 btn btn-primary btn-sm ">Edit</button>
+                        <button class="my-2 btn btn-danger btn-sm " formaction="/delete?post_id={{post['id']}}">Delete</button>
+                    </div>
+                    
+                </form>
+            </div>
+            {% endif %}
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+{% endblock%}
